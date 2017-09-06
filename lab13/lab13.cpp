@@ -23,7 +23,7 @@ cin >> yearsInFuture;
 
 totalnetGain = secondEveryBirth - secondEveryDeath + secondEveryMigrant;
 
-totalnetGain = (totalnetGain * 60 * 60 * 24 * 365) * yearsInFuture;
+totalnetGain = (totalnetGain * 60 * 24 * 365) * yearsInFuture;
 
 globalPopulation = globalPopulation + totalnetGain;
 
