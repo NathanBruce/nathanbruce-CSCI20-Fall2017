@@ -1,6 +1,8 @@
-#include <iostream>
-using namespace std;
-
+#include <iostream>                                   // Nathan Bruce
+using namespace std;                                  // 9/5/2017
+                                                      //
+                                                      //This program is designed to act as a coinstar machine and coint coins, then print out a voucher in dollars.
+                                                    
 int main()  {                                         //initalize varriables
 int total_Change = 0;                                 
 int total_Change_For_Output = 0;                      
