@@ -7,14 +7,19 @@ using namespace std;
 class book
 {
 public:
-   void SetAuthor(string author);
-   void SetTitle(string title);
-   void SetCopyYear(int year);
+   void SetAuthor(string);
+   void SetTitle(string);
+   void SetCopyYear(int);
 
    string GetAuthor() const;
    string GetTitle() const;
    int GetCopyYear() const;
-   void PrintData();
+   
+   void PrintData() {
+    cout << author_ << endl;
+    cout << title_ << endl;
+    cout << copyright_year_ << endl;
+   }
 
 private:
    string author_;
@@ -22,16 +27,16 @@ private:
    int copyright_year_;
 };
 
-void book::SetAuthor(string author);{
-    
+void book::SetAuthor(string author){
+    author_ = author;
 }
 
 void book::SetTitle(string title){
-    
+    title_ = title;
 };
 
-void book::SetCopyYear(string year){
-    
+void book::SetCopyYear(int year){
+    copyright_year_ = year;
 };
 
 
@@ -46,13 +51,11 @@ string book::GetTitle() const {
 int book::GetCopyYear() const{
     return copyright_year_;
 } 
- 
 
-void book::PrintData(){
-    cout << GetAuthor() << endl;
-    cout << GetTitle() << endl;
-    cout << GetCopyYear() << endl;
-}
+
+
+
+
 int main() {
 
 
@@ -61,43 +64,87 @@ int main() {
 string title;
 string author;
 int copyright_year = 0;
-
+book book_one;
+book book_two;
+book book_three;
+book book_four;
+book book_five;
 
     
-    book a;
-      a.book_title =;
-      a.book_author =;
-      a.copyright_year =;
+cout << "Enter the book name: ";
+     getline(cin, title);
+     book_one.SetTitle(title);
 
-    book b;
-      b.book_title =;
-      b.book_author =;
-      b.copyright_year =;
+cout << "Enter author's name: ";
+     getline(cin, author);
+     book_one.SetAuthor(author);
+     
+cout << "Enter copyright year: ";
+     cin >> copyright_year;
+     cin.ignore(1000, '\n');
+     book_one.SetCopyYear(copyright_year);
+      
+book_one.PrintData();
+      
+cout << "Enter the book name: ";
+     getline(cin, title);
+     book_two.SetTitle(title);
 
-    book c;
-      c.book_title =;
-      c.book_author =;
-      c.copyright_year =;
+cout << "Enter author's name: ";
+     getline(cin, author);
+     book_two.SetAuthor(author);
+     
+cout << "Enter copyright year: ";
+     cin >> copyright_year;
+     cin.ignore(1000, '\n');
+     book_two.SetCopyYear(copyright_year);
+      
+book_two.PrintData();
+      
+cout << "Enter the book name: ";
+     getline(cin, title);
+     book_three.SetTitle(title);
 
-    book d;
-      d.book_title =;
-      d.book_author =;
-      d.copyright_year =;
+cout << "Enter author's name: ";
+     getline(cin, author);
+     book_three.SetAuthor(author);
+     
+cout << "Enter copyright year: ";
+     cin >> copyright_year;
+     cin.ignore(1000, '\n');
+     book_three.SetCopyYear(copyright_year);
+      
+book_three.PrintData();
+      
+cout << "Enter the book name: ";
+     getline(cin, title);
+     book_four.SetTitle(title);
 
-    book e;
-      e.book_title =;
-      e.book_author =;
-      e.copyright_year =;
+cout << "Enter author's name: ";
+     getline(cin, author);
+     book_four.SetAuthor(author);
+     
+cout << "Enter copyright year: ";
+     cin >> copyright_year;
+     cin.ignore(1000, '\n');
+     book_four.SetCopyYear(copyright_year);
+      
+book_four.PrintData();
+      
+cout << "Enter the book name: ";
+     getline(cin, title);
+     book_five.SetTitle(title);
 
-
-cout << "Enter the title of the book ";
-cin >> GetBookInfo(book_author);
-
-cout << endl << "Enter the author of the book: ";
-cin >> a.book_author;
-
-cout << endl << "Enter the copyright year: ";
-cin >> a.copyright_year;
+cout << "Enter author's name: ";
+     getline(cin, author);
+     book_five.SetAuthor(author);
+     
+cout << "Enter copyright year: ";
+     cin >> copyright_year;
+     cin.ignore(1000, '\n');
+     book_five.SetCopyYear(copyright_year);
+      
+book_five.PrintData();
 
 return 0;
 
