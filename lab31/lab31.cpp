@@ -33,43 +33,43 @@ int ATT_fam_cost = 0;
 
 
 
-if (phone_type == true) {
-  cout << endl << "How many smart phones would you like? ";
-  cin >> smart_phones;
+if (phone_type == true) {                                        //
+  cout << endl << "How many smart phones would you like? ";      //
+  cin >> smart_phones;                                           //
 //  cout << endl << "You want " << smart_phones << " smart phones. " << endl << endl;
 
 }
 
-if (phone_type == true) {
-    cout << endl << "How many dumb phones do you want? ";
-    cin >> dumb_phone;
+if (phone_type == true) {                                        //
+    cout << endl << "How many dumb phones do you want? ";        //
+    cin >> dumb_phone;                                           //
 //    cout << endl << " you want " << dumb_phone << " dumb phones." << endl << endl;
 }
 
-if (phone_type == true) {
-   cout << endl << "How many tablets do you want? ";
-   cin >> tablet_amount;
+if (phone_type == true) {                                        //
+   cout << endl << "How many tablets do you want? ";             //
+   cin >> tablet_amount;                                         //
 }
 
 
-cout << endl << "How many GB of data would you like for your monthly plan? ";
-cin >> data_usageGB;
+cout << endl << "How many GB of data would you like for your monthly plan? ";      //
+cin >> data_usageGB;                
 
-if (data_usageGB < 2 && data_usageGB > 0) {
-   cout << "1gb" << endl;
-   ATT_fam_gb_cost = 30;
+if (data_usageGB < 2 && data_usageGB > 0) {                                        //
+   cout << "1gb" << endl;                                                          //
+   ATT_fam_gb_cost = 30;                                                           //
 }
 
 //else if ((data_usageGB <= 2) && (data_usageGB > 1)) {
 //   cout << "2gb" << endl;
 //}
-else if ((data_usageGB <= 3) && (data_usageGB > 1)) {
-   cout << "3gb " << endl;
-   ATT_fam_gb_cost = 40;
+else if ((data_usageGB <= 3) && (data_usageGB > 1)) {                              //
+   cout << "3gb " << endl;                                                         //
+   ATT_fam_gb_cost = 40;                                                           //
 }
-else if ((data_usageGB <= 6) && (data_usageGB > 3)) {
-   cout << "6gb " << endl;
-   ATT_fam_gb_cost = 60;
+else if ((data_usageGB <= 6) && (data_usageGB > 3)) {                              //
+   cout << "6gb " << endl;                                                         //
+   ATT_fam_gb_cost = 60;                                                           //
 }
 else if ((data_usageGB <= 10) && (data_usageGB > 6)) {
    cout << "10gb " << endl;
@@ -94,6 +94,7 @@ cout << endl << "smart phones: " << smart_phones << endl;
 cout << "dumb phones: " << dumb_phone << endl;
 cout << "data plan: " << data_usageGB << " GB" << endl << endl;
 
+//create alterable variables to calculate the price for each tree
 
 ATT_plus_phones = smart_phones + dumb_phone;
 ATT_unlim_phones = smart_phones + dumb_phone;
