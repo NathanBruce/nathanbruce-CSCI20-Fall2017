@@ -3,24 +3,25 @@ using namespace std;
 
 class ArrayTools {
    public:
-   ArrayTools () {
-       int userVals = 0;
-       int NUM_ELEMENTS = 0;
-       int i = 0;
-   }
+      ArrayTools () {
+      int userVals = 0;
+      int NUM_ELEMENTS = 0;
+      int i = 0;
+   };
    
-    void print();
- //   int Find_min(int userVals[NUM_ELEMENTS]);
-//    int Find_max(int userVals[NUM_ELEMENTS]);
-    int Find_sum;
-    int Numb_even;
-    int Numb_odd;
-    int Search;
-    int Is_Sorted;
+   
 
+      void Print();
+      int Find_min(int userVals[NUM_ELEMENTS]);
+      int Find_max(int userVals[NUM_ELEMENTS]);
+      int Find_sum;
+      int Numb_even;
+      int Numb_odd;
+//      int Search;
+//      int Is_sorted;
 };
 
-void ArrayTools::print() {
+void ArrayTools::Print() {
     cout << "your answer is " << endl;
     cout << "Min: " << endl;
     cout << "Max: "  << endl;
@@ -30,7 +31,7 @@ void ArrayTools::print() {
     cout << "Sorted: " << endl;
 }
 
-/* int ArrayTools::Find_min(int userVals[NUM_ELEMENTS]) {
+  int ArrayTools::Find_min(int userVals[NUM_ELEMENTS]) {
   int minVal = 0;
   int i = 0;
   for (i = 0; i < NUM_ELEMENTS; ++i) {
@@ -38,9 +39,9 @@ void ArrayTools::print() {
          minVal = userVals[i];
       }
 }}
-*/
 
-/*
+
+
 int ArrayTools::Find_max(int userVals[NUM_ELEMENTS]) {
   int i = 0;
   for (i = 0; i < NUM_ELEMENTS; ++i) {
@@ -48,7 +49,7 @@ int ArrayTools::Find_max(int userVals[NUM_ELEMENTS]) {
          maxVal = userVals[i];
          return maxVal;
       }
-}}*/
+}}
 
 /*
 int ArrayTools::Find_sum {
@@ -62,13 +63,33 @@ int ArrayTools::Numb_even{
 }}
 
 
-int ArrayTools::Is_Sorted{
+int ArrayTools::Is_sorted{
   for (i = 0; i < NUM_ELEMENTS; ++i) {  
 }}
 
 */
 
-
+int main()
+{
+    const int SIZE = 10;
+    int myArray[SIZE];
+    
+    for(int i = 0; i < SIZE; i++){
+        cin >> myArray[i];
+    }
+    
+    ArrayTools a(myArray,SIZE);
+    
+    a.Print();
+    cout<<"Min: "<<a.Find_min(0, 4)<<endl;
+    cout<<"Max: "<<a.Find_max(5, 10)<<endl;
+    cout<<"Sum = "<<a.Find_sum()<<endl;
+//    cout<<"Search 10"<<a.Search(10)<<endl;
+    cout<<"Sorted? "<<a.Is_sorted()<<endl;
+    
+    return 0;
+}
+/*
 int main(){
 
        const int NUM_ELEMENTS = 4;
@@ -87,7 +108,7 @@ int main(){
       cin >> userVals[i];
    }    
 
-
+*/
 
 
 
@@ -123,10 +144,6 @@ int a = 0;
 
 
 
-
-
-
-
 //==================FIND SUM -- WORKS=====================================
  for (i = 0; i < NUM_ELEMENTS; ++i){
      sum_total = sum_total + userVals[i];
@@ -134,12 +151,6 @@ int a = 0;
 
 cout << endl << "sum total " << sum_total << endl;
 //====================================================================
-
-
-
-
-
-
 //==================MIN VALUE -- WORKS========================================
 minVal = userVals[1];
 
@@ -150,12 +161,6 @@ minVal = userVals[1];
 
 //=====================================================================
          cout << endl << "\nminimum value is: " << minVal << endl;
-
-
-
-
-
-
 
 
 

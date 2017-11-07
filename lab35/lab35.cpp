@@ -10,27 +10,34 @@ This program will use a class with instructors to convert temperatures
 
 */
 
-class TemperatureConverter { //create class to convert temperature
-public:
-   TemperatureConverter(){ //create a default constructor
-       kelvin_ = 0.0;
-   }
-   TemperatureConverter(double temp) { //create an overloaded constructor for if there is an argument
-       kelvin_ = 0.0;
-   }
-   
-   double GetTempAsCelsius();
-   double GetTempAsFahrenheit();
-   double GetTempFromKelvin();
-   
-   void SetTempFromKelvin(double userTemp);
-   void SetTempFromCelsius(double CelsiusTemp);
-   void SetTempFromFahrenheit(double fahrenheit_temp);
 
-   void PrintTemperatures() ; //Prints the temperature
+//create a class TemperatureConverter that will:
+//set kelvin to 0.0 automatically with constructors
+//convert temperatures from kelvin to both celsius and fahrenheit
+//output all three temperatures (K, C, F)
 
-private:
-  double kelvin_; //private variable that will be the basis of temperature converstion
+
+class TemperatureConverter { 
+   public:
+      TemperatureConverter(){ //create a default constructor
+           kelvin_ = 0.0;
+   };
+      TemperatureConverter(double temp) { //create an overloaded constructor for if there is an argument
+           kelvin_ = temp;
+   };
+   
+      double GetTempAsCelsius(); //returns the Celsius value to the main program
+      double GetTempAsFahrenheit(); //returns the Fahrenheit value to the main program
+      double GetTempFromKelvin(); //returns the Kelvin value to the main program
+   
+      void SetTempFromKelvin(double userTemp); //converts user temp to kelvin
+      void SetTempFromCelsius(double CelsiusTemp); //converts user temp to celsius
+      void SetTempFromFahrenheit(double fahrenheit_temp); //converts user temp to fahrenheit
+
+      void PrintTemperatures() ; //Prints the temperature
+
+   private:
+      double kelvin_ = 0.0; //private variable that will be the basis of temperature converstion
 };
 
 
@@ -50,25 +57,14 @@ return;
 void TemperatureConverter::SetTempFromCelsius(double CelsiusTemp) {
       if (CelsiusTemp >= -273.15){
           kelvin_ = CelsiusTemp + 273.15;
-      }
-       else {
-              cout << "wrong. wrong, WRONG. \n";
-          }
-          
-      }
+      }}
 
 // Mutator to set Fahrenheit temperature
 // will not accept values less than -450.67
 void TemperatureConverter::SetTempFromFahrenheit(double fahrenheit_temp) {
     if (fahrenheit_temp >= -459.67) {
         kelvin_ = (5.0 * (fahrenheit_temp - 32) / 9.0) + 273.15;
-    }
-       else {
-           cout << "die in a fire. (jk) \n\n";
-       }
-
-        
-    }
+    }}
 
 // mutator to set Kelvin temperature
 // will not accept values less than 0
@@ -76,10 +72,6 @@ void TemperatureConverter::SetTempFromKelvin(double userTemp){
     if (userTemp >= 0){
        kelvin_ = userTemp;
     }
-       else {
-          cout << "Must be a positive number... ";
-    }
-
 }
 
 //==========================================================================
@@ -101,26 +93,28 @@ double TemperatureConverter::GetTempFromKelvin(){
 
 //==========================================================================
 
-int main() {
-    //create two classes, temp1 and temp2
-    TemperatureConverter temp1; //testing default constructor
-    TemperatureConverter temp2(274); //testing overloaded constructor
-    
-    temp1.PrintTemperatures(); //print temperature from class temp1
-    temp2.PrintTemperatures(); //print temperature from class temp2
-    
-    temp1.SetTempFromKelvin(400.15); //testing mutator function
-    cout<<temp1.GetTempFromKelvin()<<endl;//testing accessor function
-    temp1.PrintTemperatures();
-    
-    temp2.SetTempFromCelsius(32); //testing other functions
-    cout<<temp2.GetTempAsCelsius()<<endl;
-    temp2.PrintTemperatures();
-    
-    temp2.SetTempFromFahrenheit(32);
-    cout<<temp2.GetTempAsFahrenheit()<<endl;
-    temp2.PrintTemperatures();
-    
-    return 0;
-}
 
+/*
+
+The temperature 0 °K is equal to -273.15 °C or -459.67 °F.
+
+
+The temperature 274 °K is equal to 0.85 °C or 33.53 °F.
+
+400.15
+
+The temperature 400.15 °K is equal to 127 °C or 260.6 °F.
+
+32
+
+The temperature 305.15 °K is equal to 32 °C or 89.6 °F.
+
+32
+
+The temperature 273.15 °K is equal to 0 °C or 32 °F.
+
+
+
+
+
+*/
