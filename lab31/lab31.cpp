@@ -4,7 +4,8 @@
 using namespace std;
 
 
-int FindMinValue(const int prices[], int names[],  int numVals) {
+int FindMinValue(const int prices[],  int numVals) {
+   string names[6]={"ATT Unlimited Plus Plan", "ATT Unlimited Choice Plan", "ATT Family Plan", "Verizion Unlimited Plan", "Sprint Unlimited Plan", "Spring 2GB Plan"};
    int i = 0;
    int minVal = 0;
    int inputVal = 0;
@@ -18,7 +19,7 @@ int FindMinValue(const int prices[], int names[],  int numVals) {
          index=i;
       }
    }
-   cout << names[index] << " is your best plan. It will be: ";
+   cout << endl << names[index] << " is your best plan. It will be ";
    return minVal;
 }
 
@@ -322,8 +323,88 @@ if (ATT_plus_phones == 1) {
 
 
 customer_plan = FindMinValue(prices, CONST);
-cout << " is your cheapest plan. It will be $" <<customer_plan;
+cout << "$" <<customer_plan << ".";
 
 
 return 0;
 }
+
+/*
+How many smart phones would you like? 2
+
+How many dumb phones do you want? 0
+
+How many tablets do you want? 0
+
+How many GB of data would you like for your monthly plan? 5
+6gb 
+
+smart phones: 2
+dumb phones: 0
+data plan: 5 GB
+Tablet cost: $0
+
+ATT Unlimited Plus Plan: 145
+ATT Unlimited Choice Plan: 115
+ATT Family Plans: 100
+Verizon Unlimited Plan: 150
+Sprint Unlimited Plan: 100
+Spring 2GB Plan:  80
+
+Spring 2GB Plan is your best plan. It will be $80.
+
+
+-----------------------------------------------------------------
+
+
+How many smart phones would you like? 2
+
+How many dumb phones do you want? 1
+
+How many tablets do you want? 1
+
+How many GB of data would you like for your monthly plan? 15
+16gb 
+
+smart phones: 2
+dumb phones: 1
+data plan: 15 GB
+Tablet cost: $10
+
+ATT Unlimited Plus Plan:  175
+ATT Unlimited Choice Plan: 145
+ATT Family Plans: 160
+Verizon Unlimited Plan: 180
+Sprint Unlimited Plan: 190
+Spring 2GB Plan:  120
+
+Spring 2GB Plan is your best plan. It will be $120.
+
+Process exited with code: 0
+
+-------------------------------------------------------------------
+
+How many smart phones would you like? 0
+
+How many dumb phones do you want? 1
+
+How many tablets do you want? 0
+
+How many GB of data would you like for your monthly plan? 0
+Enter a valid number.. 
+
+smart phones: 0
+dumb phones: 1
+data plan: 0 GB
+Tablet cost: $0
+
+ATT Unlimited Plus Plan: 90
+ATT Unlimited Choice Plan: 60
+ATT Family Plans: 20
+Verizon Unlimited Plan: 100
+Sprint Unlimited Plan: 60
+Spring 2GB Plan:  40
+
+ATT Family Plan is your best plan. It will be $20.
+
+Process exited with code: 0
