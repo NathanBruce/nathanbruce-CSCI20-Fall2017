@@ -67,3 +67,52 @@ cout << "\nGame ending...";
 return 0;    
 }
 
+/*
+
+Running /home/ubuntu/workspace/lab33/lab33.cpp
+28
+You have 5 guesses left. 
+
+Enter a value: 2
+Too Low. 
+You have 4 guesses left. 
+
+Enter a value: 5
+Too Low. 
+You have 3 guesses left. 
+
+Enter a value: 4
+Too Low. 
+You have 2 guesses left. 
+
+Enter a value: 2
+Too Low. 
+You have 1 guesses left. 
+
+Enter a value: 3
+Too Low. 
+-----------------------------------------------
+You suck, loser. 
+-----------------------------------------------
+Game ending...
+
+
+******************************************************************************************************
+
+23
+You have 5 guesses left. 
+
+Enter a value: 23
+
+
+Ayyyy, you got it.. 
+23 = 23
+
+**********************************************
+Congrats! you won.                           *
+**********************************************
+
+Game ending...
+
+
+*/

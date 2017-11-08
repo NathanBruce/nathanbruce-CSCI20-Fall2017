@@ -1,34 +1,26 @@
 #include <iostream>
 #include <string>
+#include <cmath>
 using namespace std;
 
-/*
-void Sort_Prices(prices[]) {
-    placeholder = 0;
-    for (i = 0; i < 6; ++i){
-        if (prices[i] > prices[i + 1]){
-            placeholder = prices[i];
-            prices[i + 1] = prices[i];
-            prices[i] = prices[i+1];
-            prices[+1] = placeholder;
-        }}};
-        
-*/
 
-
-
-/*
-void Cheapest_Plan(int prices) {
+int FindMinValue(const int prices[], int names[],  int numVals) {
+   int i = 0;
+   int minVal = 0;
+   int inputVal = 0;
+   int index = -1;
    
-   
-};
-
-void Print_Result(string names, int prices){
-   
-};
-*/
-
-
+   minVal = fabs(prices[0]);
+   for (i = 0; i < numVals; ++i) {
+      inputVal = fabs(prices[i]);
+      if (inputVal < minVal) {
+         minVal = inputVal;
+         index=i;
+      }
+   }
+   cout << names[index] << " is your best plan. It will be: ";
+   return minVal;
+}
 
 int main() {
 
@@ -57,6 +49,8 @@ int ATT_fam_cost = 0;
 int CONST = 6;
 int prices[CONST];
 string products[CONST];
+int customer_plan = 0;
+int products_name = 0;
 
 
 //collect inputs from the user for quantity of: smart phones, dumb phones, tablet, and GB's of data
@@ -322,45 +316,14 @@ if (ATT_plus_phones == 1) {
 }
 //========================================================OUTPUT=======================
 
-int i = 0;
-for (i=0; i < 5; ++i){
-    cout << prices[i] << endl;
-}
-        
-/*       for (j = 0; j < 6; ++i){
-           if (prices[i] < prices[j]){
-              prices[i] = ph;
-              prices[j] = prices[i];
-              ph = prices[j];
-           }
- */       
-//        }}
-/*}};
 
 
 
-cout <<"\nDONE. Thank you!\n";
-
-int i = 0;
-for (i = 0; i <= 5; ++i){
-   cout << products[i] << " " << prices[i] << endl;
-   cout << "prices are: " << Sort_Prices(prices[i]);
-   
-}
 
 
+customer_plan = FindMinValue(prices, CONST);
+cout << " is your cheapest plan. It will be $" <<customer_plan;
 
-*/
 
-
-/*
-int mn = 0;
-int i = 0;
-min = prices[0];
-
-for (i = 0; i <= 5; ++i){
-   Sort_Prices(min);
-}
-*/
 return 0;
 }
