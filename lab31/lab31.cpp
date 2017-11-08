@@ -3,24 +3,34 @@
 #include <cmath>
 using namespace std;
 
+/*
+Nathan Bruce
+11/7/2017
+
+This program will figure out which cell phone plan is best for the user based on how many: smart phones, dumb phones, tables, and GB of data that they need
+*/
+
+
+//find the lowest value of all the prices in the array (array is prices for each plan)
+//output the lowest price to show to the user
 
 int FindMinValue(const int prices[],  int numVals) {
-   string names[6]={"ATT Unlimited Plus Plan", "ATT Unlimited Choice Plan", "ATT Family Plan", "Verizion Unlimited Plan", "Sprint Unlimited Plan", "Spring 2GB Plan"};
+   string names[6]={"ATT Unlimited Plus Plan", "ATT Unlimited Choice Plan", "ATT Family Plan", "Verizion Unlimited Plan", "Sprint Unlimited Plan", "Spring 2GB Plan"}; //create sepearate array to hold plan names
    int i = 0;
    int minVal = 0;
    int inputVal = 0;
    int index = -1;
    
-   minVal = fabs(prices[0]);
-   for (i = 0; i < numVals; ++i) {
-      inputVal = fabs(prices[i]);
-      if (inputVal < minVal) {
-         minVal = inputVal;
-         index=i;
+   minVal = fabs(prices[0]); //this will find the largest number
+   for (i = 0; i < numVals; ++i) { //loop to go through every element in the array
+      inputVal = fabs(prices[i]); //this will find the largest number
+      if (inputVal < minVal) { //if the element in the array is lower
+         minVal = inputVal; //store in the minimum value variable
+         index=i;  //take the same number to apply to plan name array
       }
    }
-   cout << endl << names[index] << " is your best plan. It will be ";
-   return minVal;
+   cout << endl << names[index] << " is your best plan. It will be "; //output the data plan that corresponds with the returned price (same index, seperate arrays)
+   return minVal; //return the lowest price
 }
 
 int main() {
