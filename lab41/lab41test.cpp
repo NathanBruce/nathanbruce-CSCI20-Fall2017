@@ -19,18 +19,18 @@ class ArrayTools {
    
    
       void Print();
-      int Find_min(int array, int elements);
-//      void Find_max(int, int);
-//      int Find_sum;
-//      int Numb_even;
-//      int Numb_odd;
-//      int Search;
-//      int Is_sorted;
+      int Find_min(int lower_index, int higher_index);
+      int Find_max(int lower_index, int higher_index);
+      int Find_sum(int input_array , int elements);
+      int Numb_even(int input_array , int elements);
+//    int Numb_odd(int input_array , int elements);
+//    int Search(int input_array , int elements);
+//    int Is_sorted(int input_array , int elements);
 
 
     private:
-       int myArray_[];
-       int elements_;
+       int elements_ = 5;
+       int myArray_[5];
 };
 
 
@@ -51,36 +51,37 @@ void ArrayTools::Print() {
 }
 */
 
-int ArrayTools::Find_min(int NUM_ELEMENTS,int NUM_ELEMENTS2) {
-  int minVal = 0;
-  minVal = myArray_[NUM_ELEMENTS];
+int ArrayTools::Find_min(int lower_index,int higher_index) {
+   int min_val = myArray_[lower_index];
+   for (int i = lower_index; i <= higher_index ; ++i) {
+      if (myArray_[i] < min_val) {
+         min_val = myArray_[i];
+      }
+}
+return min_val;
+}
+
+
+
+int ArrayTools::Find_max(int lower_index, int higher_index) {
+  int max_val = myArray_[lower_index-1];
+  for (int i = lower_index - 1; i <= higher_index-1; ++i) {
+      if (myArray_[i] > max_val) {
+         max_val = myArray_[i];
+      }
+  }
+  return max_val;
+}
+
+/*
+int ArrayTools::Find_sum(int input_array, int elements){
+  int sum_total = 0;
   for (int i = 0; i < elements_; ++i) {
-      if (myArray_[i] < minVal) {
-         minVal = myArray_[i];
-      }
-}
-return minVal;
-    
-}
-
-/*
-
-void ArrayTools::Find_max(int NUM_ELEMENTS, int NUM_ELEMENTS2) {
-  int maxVal = 0;
-  for (int i = 0; NUM_ELEMENTS < NUM_ELEMENTS2; ++i) {
-      if (myArray[i] > maxVal) {
-         maxVal = myArray[i];
-      }
-}}
-*/
-/*
-int ArrayTools::Find_sum {
-  for (i = 0; i < NUM_ELEMENTS; ++i) {
-      sum_total = sum_total + userVals[i];
+      sum_total = sum_total + input_array[i];
 }}*/
 
 /*
-int ArrayTools::Numb_even{
+int ArrayTools::Numb_even(int input_array , int elements){
   for (i = 0; i < NUM_ELEMENTS; ++i) {   
 }}
 
@@ -93,10 +94,10 @@ int ArrayTools::Is_sorted{
 
 int main()
 {
-    const int SIZE = 3;
+    const int SIZE = 10;
     int myArray[SIZE];
-    int min_num = 0;
-    int max_num = 0;
+ 
+cout << "Enter numbers into the array: " << endl; 
     
     for(int i = 0; i < SIZE; i++){
         cin >> myArray[i];
@@ -106,13 +107,12 @@ int main()
     
    ArrayTools a(myArray,SIZE);
    
-   a.Print();
-   cout<<"Min: "<<a.Find_min(0, 4)<<endl;
-//    cout<<"Max: "<<a.Find_max(5, 10)<<endl;
+ //  a.Print();
+      cout<<"Min: "<<a.Find_min(0, 4)<<endl;
+      cout<<"Max: "<<a.Find_max(5, 10)<<endl;
 //    cout<<"Sum = "<<a.Find_sum()<<endl;
 //    cout<<"Search 10"<<a.Search(10)<<endl;
 //    cout<<"Sorted? "<<a.Is_sorted()<<endl;
-    
     return 0;
 }
 /*

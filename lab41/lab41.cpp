@@ -5,20 +5,22 @@ class ArrayTools {
    public:
       ArrayTools () {
       int userVals = 0;
-      int NUM_ELEMENTS = 0;
-      int i = 0;
-   };
+      int NUM_ELEMENTS_ = 0;
+   }
    
    
 
       void Print();
-      int Find_min(int userVals[NUM_ELEMENTS]);
-      int Find_max(int userVals[NUM_ELEMENTS]);
-      int Find_sum;
-      int Numb_even;
-      int Numb_odd;
+//      int Find_min(int userVals[NUM_ELEMENTS]);
+//      int Find_max(int userVals[NUM_ELEMENTS]);
+//      int Find_sum;
+//      int Numb_even;
+//      int Numb_odd;
 //      int Search;
 //      int Is_sorted;
+   private:
+      int NUM_ELEMENTS_ = 4;
+ 
 };
 
 void ArrayTools::Print() {
@@ -31,17 +33,17 @@ void ArrayTools::Print() {
     cout << "Sorted: " << endl;
 }
 
-  int ArrayTools::Find_min(int userVals[NUM_ELEMENTS]) {
+  int ArrayTools::Find_min(int userVals[NUM_ELEMENTS_]) {
   int minVal = 0;
   int i = 0;
-  for (i = 0; i < NUM_ELEMENTS; ++i) {
+  for (i = 0; i < NUM_ELEMENTS_; ++i) {
       if (userVals[i] < minVal) {
          minVal = userVals[i];
       }
 }}
 
 
-
+/*
 int ArrayTools::Find_max(int userVals[NUM_ELEMENTS]) {
   int i = 0;
   for (i = 0; i < NUM_ELEMENTS; ++i) {
@@ -50,7 +52,7 @@ int ArrayTools::Find_max(int userVals[NUM_ELEMENTS]) {
          return maxVal;
       }
 }}
-
+*/
 /*
 int ArrayTools::Find_sum {
   for (i = 0; i < NUM_ELEMENTS; ++i) {
@@ -81,11 +83,11 @@ int main()
     ArrayTools a(myArray,SIZE);
     
     a.Print();
-    cout<<"Min: "<<a.Find_min(0, 4)<<endl;
-    cout<<"Max: "<<a.Find_max(5, 10)<<endl;
-    cout<<"Sum = "<<a.Find_sum()<<endl;
+//    cout<<"Min: "<<a.Find_min(0, 4)<<endl;
+//    cout<<"Max: "<<a.Find_max(5, 10)<<endl;
+//    cout<<"Sum = "<<a.Find_sum()<<endl;
 //    cout<<"Search 10"<<a.Search(10)<<endl;
-    cout<<"Sorted? "<<a.Is_sorted()<<endl;
+//    cout<<"Sorted? "<<a.Is_sorted()<<endl;
     
     return 0;
 }
@@ -111,7 +113,7 @@ int main(){
 */
 
 
-
+/*
 
 //==================FIND EVEN/ODD -- WORKS=====================================
  for (i = 0; i < NUM_ELEMENTS; ++i){
@@ -175,6 +177,6 @@ minVal = userVals[1];
     
 return 0;
 }
-
+*/
 
 //myFunc (int a[])
