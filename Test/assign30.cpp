@@ -1,6 +1,6 @@
 #include <iostream>
 using namespace std;
-#include <ctime>;
+#include <ctime>
 
 /* 
 Nathan Bruce
@@ -13,29 +13,21 @@ Nathan Bruce
 
 class GameNumber {
     public:
-      int RollDice(); //rolls random number for computer
+//      int RollDice(); //rolls random number for computer
       
-      void ContinueOrNot();   //asks the user if they will continue or not
-      void DetermineWhoWon(); //determines if the user or computer won
-      void DisplayScore();    //display the score totals
+//      void ContinueOrNot();   //asks the user if they will continue or not
+ //     void DetermineWhoWon(); //determines if the user or computer won
+ //     void DisplayScore();    //display the score totals
       
+      private:
        int playerscore_;         //variable to act as players overall score
        int computerscore_;       //variable that acts as players computerscore
        int usernum_;             //keeps track of the diceroll
        int computernum_;         //keeps track of the diceroll
      };
      
-class BotPlayer(){
-    public:
-    
-};
 
-
-class UserClass() {
-    public:
-};
-
-
+/*
 void GameNumber::DetermineWhoWon(){
     if (computerscore_ >= 100) {
        cout << "computer won";
@@ -71,7 +63,7 @@ double GameNumbe::AddScore(){
 }    
     
 }
-
+*/
 //========================================================================
 int GameNumber::RollDice(){
   srand(time(0));
@@ -81,7 +73,7 @@ int GameNumber::RollDice(){
      
 main() {
     
-    while (userNum < 100) && (computerscore < 100)
+ //   while (userNum < 100) && (computerscore < 100)
     
     
     return 0;

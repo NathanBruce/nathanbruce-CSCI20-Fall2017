@@ -21,76 +21,35 @@ class ArrayTools {
       void Print();
       int Find_min(int lower_index, int higher_index);
       int Find_max(int lower_index, int higher_index);
-      int Find_sum(int input_array , int elements);
-      int Numb_even(int input_array , int elements);
-//    int Numb_odd(int input_array , int elements);
-//    int Search(int input_array , int elements);
-//    int Is_sorted(int input_array , int elements);
+      int Find_sum();
+      int Num_even_odd(int lower_index, int higher_index);
+      int Search(int find_number);
+      string Is_sorted();
 
 
     private:
-       int elements_ = 5;
-       int myArray_[5];
+       int elements_ ;
+       int myArray_[10];
 };
 
 
-void ArrayTools::Print(){
-     for (int i=0; i<elements_; ++i){
-         cout << myArray_[i] << " and ";
-     }
-}
-/*
-void ArrayTools::Print() {
-    cout << "your answer is " << endl;
-    cout << "Min: " << endl;
-    cout << "Max: "  << endl;
-    cout << "Sum: " <<  endl;
-    cout << "Odd Numbers:  "  << endl;
-    cout << "Even Numbers: "  << endl;
-    cout << "Sorted: " << endl;
-}
-*/
 
-int ArrayTools::Find_min(int lower_index,int higher_index) {
-   int min_val = myArray_[lower_index];
-   for (int i = lower_index; i <= higher_index ; ++i) {
-      if (myArray_[i] < min_val) {
-         min_val = myArray_[i];
-      }
-}
-return min_val;
-}
-
-
-
-int ArrayTools::Find_max(int lower_index, int higher_index) {
-  int max_val = myArray_[lower_index-1];
-  for (int i = lower_index - 1; i <= higher_index-1; ++i) {
-      if (myArray_[i] > max_val) {
-         max_val = myArray_[i];
-      }
-  }
-  return max_val;
-}
 
 /*
-int ArrayTools::Find_sum(int input_array, int elements){
-  int sum_total = 0;
-  for (int i = 0; i < elements_; ++i) {
-      sum_total = sum_total + input_array[i];
-}}*/
+//==================IS SORTED -- =====================================
+int ArrayTools::Is_sorted(){
+    int a = 0;
+    for (int i = 0; i < elements_; ++i){
+        if (myArray_[i] < myArray_[i + 1]){
+            a = myArray_[i + 1];
+            myArray_[i + 1] = myArray_[i];
+            myArray_[i] = a;
+     
+         cout << "\nsorted " << myArray_[i];
+     }}
 
-/*
-int ArrayTools::Numb_even(int input_array , int elements){
-  for (i = 0; i < NUM_ELEMENTS; ++i) {   
-}}
+}*/
 
-
-int ArrayTools::Is_sorted{
-  for (i = 0; i < NUM_ELEMENTS; ++i) {  
-}}
-
-*/
 
 int main()
 {
@@ -107,53 +66,18 @@ cout << "Enter numbers into the array: " << endl;
     
    ArrayTools a(myArray,SIZE);
    
- //  a.Print();
+      a.Print();
       cout<<"Min: "<<a.Find_min(0, 4)<<endl;
       cout<<"Max: "<<a.Find_max(5, 10)<<endl;
-//    cout<<"Sum = "<<a.Find_sum()<<endl;
-//    cout<<"Search 10"<<a.Search(10)<<endl;
-//    cout<<"Sorted? "<<a.Is_sorted()<<endl;
-    return 0;
+      cout<<"Sum = "<<a.Find_sum()<<endl;
+      cout<<"Search 10: "<<a.Search(10)<<endl;
+      cout<<"Sorted? "<<a.Is_sorted()<<endl;
+      cout<<a.Num_even_odd(0, 10)<<endl;  //added this one // changed to even
+      return 0;
 }
-/*
-int main(){
 
-       const int NUM_ELEMENTS = 4;
-       int userVals[NUM_ELEMENTS];
-       int i = 0;
-       int find_even[NUM_ELEMENTS] = {};
-       int find_odd[NUM_ELEMENTS] = {};
-       int maxVal = 0;
-       int minVal = 0;
-       int sum_total = 0;
-       
- cout << "Enter " << NUM_ELEMENTS << " integer values..." << endl;
-   
-  for (i = 0; i < NUM_ELEMENTS; ++i) {
-      cout << "Value: ";
-      cin >> userVals[i];
-   }    
-
-*/
 
 /*
-
-
-//==================FIND EVEN/ODD -- WORKS=====================================
- for (i = 0; i < NUM_ELEMENTS; ++i){
-     if (userVals[i] % 2 == 0){
-         find_even[i] = userVals[i];
-         cout << "\neven number in element " << i << " is: " << find_even[i];
-}     else if (userVals[i] % 2 == 1){
-         find_odd[i] = userVals[i];
-         cout << "\nodd number in element " << i << " is: " << find_odd[i];
-     
-    
-}}
-
-cout << endl << endl;
-int sorted_temp = 0;
-int a = 0;
 
 //==================IS SORTED -- =====================================
  for (i = 0; i < NUM_ELEMENTS; ++i){
@@ -168,43 +92,94 @@ int a = 0;
 //cout << endl << "Sorted  " << endl;
 //====================================================================
 
+*/
+
+//====================NUMBER EVEN/ODD -- WORKS!========================
+int ArrayTools::Num_even_odd(int lower_index, int higher_index){
+    int counter_even = 0;
+    int counter_odd = 0;
+        for (int i=lower_index; i<higher_index; ++i){
+            if (myArray_[i] % 2 == 0){
+                counter_even += 1;
+            }
+            if (myArray_[i] % 2 == 1)
+                counter_odd += 1;
+            
+        }
+        
+  cout << "number even: " << counter_even <<
+  endl << "Number odd: " ;
+  return counter_odd;
+    
+}
 
 
+//====================IS SORTED -- Works==================
+string ArrayTools::Is_sorted(){
+    for (int i=0; i<elements_-1; ++i){
+        if (myArray_[i] > myArray_[i + 1]){
+            return "No";
+
+        }
+    }
+    return "Yes";
+}
 
 
+//==================SEARCH 10 -- WORKS==================================
+int ArrayTools::Search(int number){
+    for (int i=0; i< elements_; ++i){
+        if (myArray_[i] == number){
+            return number;
+            }
+    }
+    return -1;
+}
+
+//============PRINT -- WORKS====================
+void ArrayTools::Print(){
+     cout << "Numbers are:  ";
+     for (int i=0; i<elements_; ++i){
+         cout << myArray_[i] << ", ";
+     }
+     cout << endl;
+}
+
+//======================FIND MIN- Works!=====================================
+
+
+int ArrayTools::Find_min(int lower_index,int higher_index) {
+   int min_val = myArray_[lower_index];
+   for (int i = lower_index; i <= higher_index ; ++i) {
+      if (myArray_[i] < min_val) {
+         min_val = myArray_[i];
+      }
+}
+return min_val;
+}
+
+
+//=========================FIND MAX -- WORKS =============================
+
+int ArrayTools::Find_max(int lower_index, int higher_index) {
+  int max_val = myArray_[lower_index-1];
+  for (int i = lower_index - 1; i <= higher_index-1; ++i) {
+      if (myArray_[i] > max_val) {
+         max_val = myArray_[i];
+      }
+  }
+  return max_val;
+}
 
 
 //==================FIND SUM -- WORKS=====================================
- for (i = 0; i < NUM_ELEMENTS; ++i){
-     sum_total = sum_total + userVals[i];
+int ArrayTools::Find_sum(){
+    int sum_total = 0;
+    for (int i = 0; i < elements_; ++i){
+        sum_total = sum_total + myArray_[i];
 }
-
-cout << endl << "sum total " << sum_total << endl;
-//====================================================================
-//==================MIN VALUE -- WORKS========================================
-minVal = userVals[1];
-
- for (i = 0; i < NUM_ELEMENTS; ++i){
-      if (userVals[i] < minVal) {
-         minVal = userVals[i];
-}}
-
-//=====================================================================
-         cout << endl << "\nminimum value is: " << minVal << endl;
-
-
-
-//=================MAX VALUE -- WORKS!=================================== 
- for (i = 0; i < NUM_ELEMENTS; ++i){
-      if (userVals[i] > maxVal) {
-         maxVal = userVals[i];
-}}
-
-         cout << "\nmaximum value is: " << maxVal;
-//=====================================================
     
-return 0;
+    return sum_total;
 }
 
-
-//myFunc (int a[])*/
+//====================================================================

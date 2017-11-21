@@ -12,15 +12,14 @@ create class for User{
 
 
 
-create class for BotPlayer {
-      integer for botscore
-      integer for bot totalscore
-      void rolling dice}
+//create class for BotPlayer {
+//      integer for botscore
+//      integer for bot totalscore
+//      void rolling dice}
+//}
 
-}
-
-function for void dice roll in class game
-    return srand()
+//function for void dice roll in class game
+//    return srand();
 
 
 main() 

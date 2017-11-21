@@ -56,6 +56,7 @@ int GameNumber::RollDice(){
     
     while (playserscore < 100)
           if (rolledDice == 1)
+                return 
                 
           else if (rolledDice > 1 && rolledDice <= 6)
           

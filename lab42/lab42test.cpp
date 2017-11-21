@@ -3,39 +3,37 @@
 using namespace std;
 
 /*
-nathan bruce
-11/21/2017
-
 This program mimics an online shopping cart.
 You are the proprietor of an online shop and have to keep track of inventory, price and the user’s shopping cart.  Create a menu of at least 10 items for the user to choose from.
 Identify your starting inventory and price.  As the user purchases an item, you should remove that item from inventory (subtract 1) and add the price to a total.
 When the user is done adding items to their cart, you should output a statement of what they have ordered and the total cost of their purchases.
 Do not allow you inventory to go below 0.
-
-uses parallel arrays
 */
 
 int main(){
     
-    const int FOOD = 10; //create constants for food array
-    const int PRICES = 10;//create constant for price array
-    string menu_items[FOOD] = {"cheeseburger", "fries","shake","tacos","soda", "sandwiches", "curly fries", "bacon cheeseburger", "bacon tacos", "bacon fries"}; //food contents of the menu
-    int menu_prices[PRICES] = {5,2,3,3,2,4,3,6,4,3}; //prices of the food on the menu
-    int final_price = 0;//to output users final price
-    int users_choice = 0;//determines which item the user wants to add to cart
-    int add_or_no = 0;//determines if user wants to add to cart
-    int counter = 0; //will be used to determines which items will need to be printed from the array when reiterating over users menu
-    string final_choice_array[FOOD] = {}; //this will tell the user what they have ordered near the end of the program
-    char final_decision = 'y'; //initialize a character to let user decide if they are done ordering or not
+    const int FOOD = 10;
+    const int PRICES = 10;
+    string menu_items[FOOD] = {"cheeseburger", "fries","shake","tacos","soda", "sandwiches", "curly fries", "bacon cheeseburger", "bacon tacos", "bacon fries"};
+    int menu_prices[PRICES] = {5,2,3,3,2,4,3,6,4,3};
+    int final_price = 0;
+    int users_choice = 0;
+    int add_or_no = 0;
+    int counter = 0;
+    string final_choice_array[FOOD] = {};
 
+    char final_decision = 'y';
    //create a menu that will display all the items and their corresponding prices 
-   //input will be the contents of the menu arrays: both prices and food 
-   //output will display all contents of the menu and their corresponding prices
     for (int j=0; j < FOOD; ++j){
            cout << "item " << j + 1 << "| " << menu_items[j] << ": $" << menu_prices[j] << endl;
+        
     }
+    
     cout << endl << "We are currently low on inventory, and we only have one of each item.\nSorry for the inconvenience!\nWhich item would you like to order?" << endl;
 
+    
+    
+    
 //create a loop that will add the users order until they decide they are done (using final choice)    
     while (final_decision == 'y') {
         cout << endl <<
@@ -259,6 +257,8 @@ int main(){
                  cin >> final_decision;// ask user if they want to leap to checkout or continue ordering
             }
          }        
+         
+         
 }   
     
     cout << endl << endl <<
@@ -266,11 +266,18 @@ int main(){
     "The items that you've ordered are: " << endl <<
     "========================================" << endl << endl;
     
-    for (int i=0; i < counter; ++i){ //create a loop that will iterate through the users order, output the food items
+    for (int i=0; i < counter; ++i){
          cout << "-" << final_choice_array[i] << endl;}
        
        
-    cout << endl << endl << "your total price is: $" << final_price;//tell the user their final price
+    cout << endl << endl << "your total price is: $" << final_price;  
+    //create a display for customer to choose which item
+    //should subtract inventory and add prices to the total
+    
+    //output statement of what they have, and how much it will cost
+    
+    //dont let inventory to go below 0
+    
     
  return 0;   
 }
