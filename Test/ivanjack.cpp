@@ -2,14 +2,12 @@
 using namespace std;
 
 int main() {
-    
-    double a = 0;
-    
-    a = 5;
-    a = 6;
-    
-    
-    cout << "the answer is: " << a << endl;
+
+for (int i =97; i<(97+26); i++){
+    if(i%2 ==0){
+        cout<<static_cast<char>(i);
+    }
+}
     
     return 0;
 }
