@@ -4,13 +4,14 @@
 #include <ctime>
 using namespace std;
 
-
+//create class for the monsters the users will be fighting
 class Monster {
     public:
       void Print();
       void Encounter();
       int GetAttack();
       int GetHealth();
+      string GetName();
       int PlayerDamage(int damage_taken);
       int Loot();
        Monster() {
@@ -53,6 +54,10 @@ int Monster::GetHealth(){
     return monsterhealth_;
 }
 
+string Monster::GetName(){
+    return monstername_;
+}
+
 int Monster::PlayerDamage(int players_attack){
     monsterhealth_ -= players_attack;
 }
@@ -83,7 +88,7 @@ class Player{
        int YourTurn(int player_choice);
        int GetHealth();
        int PickupLoot(int Loot);
-       int SetHealth(int health);
+
        
        int UserChoice(int choice);
        
@@ -138,10 +143,7 @@ int Player::GetHealth() {
     return playerhealth_;
 }
 
-int Player::SetHealth(int health){
-    playerhealth_ = health;
-    return playerhealth_;
-}
+
 
 int Player::HPLoss(int damage){
     playerhealth_ = playerhealth_ - damage;
@@ -194,8 +196,3 @@ int Player::PickupLoot(int loot){
         cout << "You now have " << health_potion_ << " health potions.\n";
     }
 }
-
-/*Player::ReTurn(int number){
-    if (number == 3){
-    YourTurn();
-}*/

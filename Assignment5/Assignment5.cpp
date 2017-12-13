@@ -1,6 +1,6 @@
 
 #include "Assignment5.h" //include the the header file
-
+#include <fstream> //include file stream
 
 
 /*
@@ -26,6 +26,9 @@ int main(){
     //player and creatures attack
     int attack = 0;
     int creature_attack = 0;
+    
+    //create an array
+    string graveyard_list[5];
     
     //constructors used to create the monsters
     Monster cockroach(4,25,"Cockroach"); 
@@ -101,6 +104,7 @@ int main(){
     //check to see if the monster dropped loot
     //if yes, add the loot (health potion) to players inventory
     else if (monster_health <= 0){
+       graveyard_list[0] = cockroach.GetName();
        int inventory = cockroach.Loot();
        One.PickupLoot(inventory); //if yes, show findings and overall health potion
        monster_amount[0] = 1; //used for next encounter
@@ -171,7 +175,8 @@ int main(){
     //check to see if the monster dropped loot
     //if yes, add the loot (health potion) to players inventory
     else if (monster_health <= 0){
-        int inventory = wolf.Loot();
+       graveyard_list[1] = wolf.GetName();
+       int inventory = wolf.Loot();
        One.PickupLoot(inventory);
        monster_amount[0] = 2;
        player_health += creature_attack;
@@ -233,6 +238,7 @@ int main(){
     //check to see if the monster dropped loot
     //if yes, add the loot (health potion) to players inventory
     else if (monster_health <= 0){
+       graveyard_list[2] = minotaur.GetName();
        int inventory = minotaur.Loot();
        One.PickupLoot(inventory);
        monster_amount[0] = 3;
@@ -285,6 +291,7 @@ int main(){
 
     if (monster_health <= 0){
        player_health += creature_attack;
+       graveyard_list[3] = demon.GetName();
     }    
 
 
@@ -300,9 +307,9 @@ int main(){
     
     //output will message
     else if (monster_health <= 0){
-        cout << "Congratulations! You've made your way out of the maze and slain " << monster_amount[0] + 1
+        cout << "Congratulations! You've made your way out of the maze and slayed " << monster_amount[0] + 1
              << " monsters."
-             << " Unfortunately, you soon after died from dystenntry... :(";
+             << " Unfortunately, you died soon after from dysentery... :(";
     }
 
             
@@ -311,6 +318,20 @@ int main(){
     }
  
 }
+
+//create and open up the file for output
+ofstream graveyard;
+graveyard.open("Graveyard.txt");
+
+
+cout << endl << endl << endl;
+graveyard << user_name << endl;
+
+for (int i=0; i < 4; ++i){
+    graveyard << graveyard_list[i] << endl;
+}
+
+graveyard.close();
 
     return 0;
 }
